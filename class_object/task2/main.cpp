@@ -9,13 +9,11 @@ class Counter {
     
     public:
 
-    Counter() {}
-
-    Counter(int count) {
-        this->count = count;
+    Counter() {
+        count = 0;
     }
 
-    void setCount(int count) {
+    Counter(int count) {
         this->count = count;
     }
 
@@ -37,18 +35,19 @@ int main(int, char**) {
     int count;
     char ch;
     bool flag = true;
-    Counter counter;
     std::string answer;
+    
     std::cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
     std::cin >> answer;
     if(answer == "да") {
         std::cout << "Введите начальное значение счётчика: ";
         std::cin >> count;
-        counter.setCount(count);
     } else {
         std::cout << "До свидания!" << std::endl;
         flag = false;
     }
+
+    Counter counter(count);    
 
     while(flag) {
 
@@ -73,7 +72,7 @@ int main(int, char**) {
             case 'x':
                 std::cout << "До свидания!" << std::endl;
                 flag = false;
-                break;
+            
              
         }
     }
