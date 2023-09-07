@@ -10,7 +10,7 @@ class Counter {
     public:
 
     Counter() {
-        count = 0;
+        this->count = 1;
     }
 
     Counter(int count) {
@@ -32,7 +32,7 @@ class Counter {
 
 int main(int, char**) {
 
-    int count;
+    int count = 0;
     char ch;
     bool flag = true;
     std::string answer;
@@ -43,8 +43,7 @@ int main(int, char**) {
         std::cout << "Введите начальное значение счётчика: ";
         std::cin >> count;
     } else {
-        std::cout << "До свидания!" << std::endl;
-        flag = false;
+        count = 1;
     }
 
     Counter counter(count);    
