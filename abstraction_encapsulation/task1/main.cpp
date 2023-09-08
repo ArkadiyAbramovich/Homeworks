@@ -73,7 +73,7 @@ int main(int, char**) {
 
     for(int i = numberOfAddress - 1; i >= 0; i--) {
 
-        writeAddr << pAddr[i].getCity() << ", " << pAddr[i].getStreet() << ", " << pAddr[i].getNumberBuilding() << ", " << pAddr->getNumberApartment();
+        writeAddr << pAddr[i].getCity() << ", " << pAddr[i].getStreet() << ", " << pAddr[i].getNumberBuilding() << ", " << pAddr[i].getNumberApartment();
         writeAddr << '\n';
     }
     readAddr.close();

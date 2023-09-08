@@ -6,7 +6,7 @@ class Address {
     
     private:
     std::string city, street;
-    static int numberbuilding, numberApartment;
+    int numberbuilding, numberApartment;
 
     public:
 
@@ -36,34 +36,36 @@ class Address {
     }
 
     void sort(Address* addr, int size) {
-        for(int i{}; i < size; i++) {
-            for(int j{}; j <size - i; j++) {
-                std::string str1 = addr[j].getCity();
-                std::string str2 = addr[j + 1].getCity();
-                if(str1 > str2) {
-                    std::string city, street;
-                    int building, apartment;
+    for(int i{}; i < size; i++) {
+        for(int j{}; j < size -i; j++) {   
+            std::string str1 = addr[j].getCity();
+            std::string str2 = addr[j+1].getCity();
+            if(str1 > str2) {
+                std::string city, street;
+                int building, apartment;
 
-                    city = addr[j].city;
-                    street = addr[j].street;
-                    building = addr[j].numberbuilding;
-                    apartment = addr[j].numberApartment;
+                city = addr[j].city;
+                street = addr[j].street;
+                building = addr[j].numberbuilding;
+                apartment = addr[j].numberApartment;
 
-                    addr[j].city = addr[j + 1].city;
-                    addr[j].street = addr[j + 1].street;
-                    addr[j].numberbuilding = addr[j + 1].numberbuilding;
-                    addr[j].numberApartment = addr[j + 1].numberApartment;
+                addr[j].city = addr[j+1].city;
+                addr[j].street = addr[j+1].street;
+                addr[j].numberbuilding = addr[j+1].numberbuilding;
+                addr[j].numberApartment = addr[j+1].numberApartment;
 
-                    addr[j + 1].city = city;
-                    addr[j + 1].street = street;
-                    addr[j + 1].numberbuilding = numberbuilding;
-                    addr[j + 1].numberApartment = numberApartment;    
-                }
+                addr[j+1].city = city;
+                addr[j+1].city = street;
+                addr[j+1].city = numberbuilding;
+                addr[j+1].city = numberApartment;
+
+
             }
         }
     }
-
+}
 };
+
 
 
 int main(int, char**) {
@@ -85,7 +87,7 @@ int main(int, char**) {
     for(int i{}; i < numberOfAddress; i++) {
 
         readAddr >> city >> street >> building >> apartment;
-        Address addr(city, street, building, apartment);
+        Address addr(city, street,building, apartment);
         pAddr[i] = addr;
     }
 
@@ -101,18 +103,20 @@ int main(int, char**) {
 
     writeAddr << numberOfAddress << std::endl;
 
-
     for(int i{}; i < numberOfAddress; i++) {
 
-        writeAddr << pAddr[i].getCity() << ", " << pAddr[i].getStreet() << ", " << pAddr[i].getNumberBuilding() << ", " << pAddr->getNumberApartment();
+        writeAddr << pAddr[i].getCity() << ", " << pAddr[i].getStreet() << ", " << pAddr[i].getNumberBuilding() << ", " << pAddr[i].getNumberApartment();
         writeAddr << '\n';
     }
-
     readAddr.close();
     writeAddr.close();
     delete[] pAddr;
 
 }
+
+
+
+
 
 
 
