@@ -1,3 +1,4 @@
+CC=g++
 
 main: main.o
 	$(CC) main.o -o main
