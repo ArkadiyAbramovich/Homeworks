@@ -121,7 +121,7 @@ class RightTriangle : public Triangle {
     }
 
     bool checkFigure() override {
-    if(angle_c == 90 && (angle_a + angle_c) == 90) {
+    if(angle_c == 90 && (angle_a + angle_c + angle_b) == 180) {
         std::cout << "Правильная" << std::endl;
         return true; 
     } else {
@@ -251,7 +251,7 @@ class Rectangle : public Quadrilateral {
     }
 
     bool checkFigure() override {
-        if((angle_a, angle_b, angle_c, angle_d) == 90 && side_a == side_c && side_b == side_d && Quadrilateral::checkFigure() == true) {
+        if((angle_a, angle_b, angle_c, angle_d) == 90 && side_a == side_c && side_b == side_d && (angle_a + angle_b + angle_c + angle_d) == 360 && Quadrilateral::getSides() == 4) {
             std::cout << "Правильная" << std::endl;
             return true; 
         } else {
@@ -270,7 +270,7 @@ class Square : public Quadrilateral {
     }
 
     bool checkFigure() override {
-        if((angle_a, angle_b, angle_c, angle_d) == 90 && side_a == side_b && side_b == side_c && side_c == side_d && side_d == side_a && Quadrilateral::checkFigure() == true) {
+        if((angle_a, angle_b, angle_c, angle_d) == 90 && side_a == side_b && side_b == side_c && side_c == side_d && side_d == side_a && (angle_a + angle_b + angle_c + angle_d) == 360 && Quadrilateral::getSides() == 4) {
             std::cout << "Правильная" << std::endl;
             return true; 
         } else {
@@ -289,7 +289,7 @@ class Parallelogram : public Quadrilateral {
     }
 
     bool checkFigure() override {
-        if(side_a == side_c && side_b == side_d && angle_a == angle_c && angle_b == angle_d && Quadrilateral::checkFigure() == true) {
+        if(side_a == side_c && side_b == side_d && angle_a == angle_c && angle_b == angle_d && (angle_a + angle_b + angle_c + angle_d) == 360 && Quadrilateral::getSides() == 4) {
             std::cout << "Правильная" << std::endl;
             return true; 
         } else {
@@ -308,7 +308,7 @@ class Rhombus : public Quadrilateral {
     }
 
     bool checkFigure() override {
-        if(angle_a == angle_c && angle_b == angle_d && side_a == side_b && side_b == side_c && side_c == side_d && side_d == side_a && Quadrilateral::checkFigure() == true) {
+        if(angle_a == angle_c && angle_b == angle_d && side_a == side_b && side_b == side_c && side_c == side_d && side_d == side_a && (angle_a + angle_b + angle_c + angle_d) == 360 && Quadrilateral::getSides() == 4) {
             std::cout << "Правильная" << std::endl;
             return true; 
         } else {
