@@ -1,12 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <algorithm>
 
 class Address {
     
     private:
     std::string city, street;
-    int numberbuilding, numberApartment;
+    int numberbuilding, numberApartment = 0;
 
     public:
 
@@ -35,36 +36,27 @@ class Address {
         return numberApartment;
     }
 
-    void sort(Address* addr, int size) {
-    for(int i{}; i < size; i++) {
-        for(int j{}; j < size -i; j++) {   
-            std::string str1 = addr[j].getCity();
-            std::string str2 = addr[j+1].getCity();
+    std::string getOutAddress() {
+        std::string str = city + ", " + street + ", " + std::to_string(numberbuilding) + ", " + std::to_string(numberApartment);
+        return str;
+    }
+
+};
+
+void sort(Address* addres, int size) {
+    for(int i{}; i < size - 1; i++) {
+        for(int j{}; j < size - 1 - i; j++) {
+            std::string str1 = addres[j].getCity();
+            std::string str2 = addres[j+1].getCity();
             if(str1 > str2) {
-                std::string city, street;
-                int building, apartment;
-
-                city = addr[j].city;
-                street = addr[j].street;
-                building = addr[j].numberbuilding;
-                apartment = addr[j].numberApartment;
-
-                addr[j].city = addr[j+1].city;
-                addr[j].street = addr[j+1].street;
-                addr[j].numberbuilding = addr[j+1].numberbuilding;
-                addr[j].numberApartment = addr[j+1].numberApartment;
-
-                addr[j+1].city = city;
-                addr[j+1].city = street;
-                addr[j+1].city = numberbuilding;
-                addr[j+1].city = numberApartment;
-
-
+                Address temp;
+                temp = addres[j];
+                addres[j] = addres[j+1];
+                addres[j+1] = temp;
             }
         }
     }
 }
-};
 
 
 
@@ -90,6 +82,8 @@ int main(int, char**) {
         Address addr(city, street,building, apartment);
         pAddr[i] = addr;
     }
+    
+    sort(pAddr, numberOfAddress);
 
     std::ofstream writeAddr("out.txt");
 
@@ -99,24 +93,19 @@ int main(int, char**) {
         std::cout << "File out.txt is opened" << std::endl;
     }
 
-    pAddr->sort(pAddr, numberOfAddress);
-
     writeAddr << numberOfAddress << std::endl;
 
     for(int i{}; i < numberOfAddress; i++) {
 
-        writeAddr << pAddr[i].getCity() << ", " << pAddr[i].getStreet() << ", " << pAddr[i].getNumberBuilding() << ", " << pAddr[i].getNumberApartment();
-        writeAddr << '\n';
+        writeAddr << pAddr[i].getOutAddress() << std::endl;
     }
     readAddr.close();
     writeAddr.close();
     delete[] pAddr;
 
+    return 0;
+
 }
-
-
-
-
 
 
 
