@@ -1,7 +1,7 @@
 CC=g++
 
 figure: source.o figure.o triangle.o right_triangle.o IsoscelesTriangle.o EquilateralTriangle.o Quadrilateral.o Rectangle.o Square.o Parallelogram.o Rhombus.o 
-	$(CC) main.o -o main
+	$(CC) source.o figure.o triangle.o right_triangle.o IsoscelesTriangle.o EquilateralTriangle.o Quadrilateral.o Rectangle.o Square.o Parallelogram.o Rhombus.o -o figure
 
 source.o: source.cpp
 	$(CC) -c source.cpp -o source.o

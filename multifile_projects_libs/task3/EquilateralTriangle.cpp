@@ -11,6 +11,6 @@
             return true; 
         } else {
             std::cout << "Неправильная" << std::endl;
-            eturn false;
+            return false;
         }
     }

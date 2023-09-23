@@ -5,7 +5,7 @@ class Square : public Quadrilateral {
 
     public:
 
-    Square(int side_a, int angle_a) : Quadrilateral(side_a, side_a, side_a, side_a, angle_a, angle_a, angle_a, angle_a){};
+    Square(int side_a, int angle_a);
 
     bool checkFigure();
 };
