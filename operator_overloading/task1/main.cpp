@@ -14,29 +14,28 @@ public:
 	}
 
 
-
     bool operator==(const Fraction& fraction) {
-      return numerator_/denominator_ == fraction.numerator_/fraction.denominator_;  
+      return numerator_ * fraction.denominator_ == fraction.numerator_ * denominator_;  
     }
 
 	bool operator!=(const Fraction& fraction) {
-		return !(numerator_/denominator_ == fraction.numerator_/fraction.denominator_);
+		return !(numerator_ * fraction.denominator_ == fraction.numerator_ * denominator_);
 	}
 
 	bool operator<(const Fraction& fraction) {
-		return numerator_/denominator_ < fraction.numerator_/fraction.denominator_;
+		return numerator_ * fraction.denominator_ < fraction.numerator_ * denominator_;
 	}
 
 	bool operator>(const Fraction& fraction) {
-		return fraction.numerator_/fraction.denominator_ < numerator_/denominator_;
+		return fraction.numerator_ * denominator_ <  numerator_ * fraction.denominator_;
 	}
 
 	bool operator<=(const Fraction& fraction) {
-		return !(numerator_/denominator_ > fraction.numerator_/fraction.denominator_);
+		return !(numerator_ * fraction.denominator_ > fraction.numerator_ * denominator_);
 	}
 
 	bool operator>=(const Fraction& fraction) {
-		return !(numerator_/denominator_ < fraction.numerator_/fraction.denominator_);
+		return !(numerator_ * fraction.denominator_ < fraction.numerator_ * denominator_);
 	}
 };
 
