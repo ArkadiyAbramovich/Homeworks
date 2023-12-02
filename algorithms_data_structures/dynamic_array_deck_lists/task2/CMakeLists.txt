@@ -1,0 +1,3 @@
+cmake_minimum_required(VERSION 3.27)
+project(append_to_dynamic_array)
+add_executable(append_to_dynamic_array main.cpp print_array.cpp append_to_dynamic_array.cpp)
