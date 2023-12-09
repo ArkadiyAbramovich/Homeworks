@@ -1,0 +1,22 @@
+#pragma once
+
+class Array {
+
+    private:
+
+    int* ptr_;
+
+    int size_;
+
+    public:
+    Array(int size);
+
+   ~Array();
+
+   Array* operator=(const Array& arr);
+
+    void AddElement(int element);
+
+    int GetElement(int index);
+
+};
