@@ -17,6 +17,8 @@ class Array {
 
     void AddElement(int element);
 
+    void AddElement(const int& element);
+
     int GetElement(int index);
 
 };

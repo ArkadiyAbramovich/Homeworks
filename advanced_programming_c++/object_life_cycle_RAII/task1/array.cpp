@@ -1,7 +1,6 @@
 #include "array.h"
 #include "iostream"
 
-
 Array::Array(int size) {
 
     ptr_ = new int[size];
@@ -16,7 +15,7 @@ Array::~Array() {
 
 }
 
-void Array::AddElement(int element) {
+void Array::AddElement(const int& element) {
 
     if (ptr_index_ > size_) {
         throw std::runtime_error("Out of Range");
@@ -24,8 +23,6 @@ void Array::AddElement(int element) {
     
     ptr_[ptr_index_-1] = element;
     ptr_index_++;
-    
-
 }
 
 int Array::GetElement(int index) {
@@ -37,3 +34,5 @@ int Array::GetElement(int index) {
     return ptr_[index - 1];
 
 }
+
+

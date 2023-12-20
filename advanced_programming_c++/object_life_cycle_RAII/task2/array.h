@@ -11,6 +11,14 @@ class Array {
     int ptr_index_;
 
     public:
+    
+    Array(int size);
+
+    ~Array();
+
+    Array& operator=(const Array& arr);
+
+    public:
     Array(int size);
 
     ~Array();
@@ -20,9 +28,5 @@ class Array {
     void AddElement(int element);
 
     int GetElement(int index);
-
-    int GetPtrIndex();
-
-    int GetSize();
 
 };
