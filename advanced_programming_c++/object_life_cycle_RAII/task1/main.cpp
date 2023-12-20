@@ -13,10 +13,7 @@ int main() {
         arr.AddElement(15);
       
         std::cout << arr.GetElement(1) << std::endl;
-        std::cout << arr.GetElement(2) << std::endl;
-        std::cout << arr.GetElement(3) << std::endl;
-        std::cout << arr.GetElement(4) << std::endl;
-        std::cout << arr.GetElement(5) << std::endl;
+         std::cout << arr.GetElement(2) << std::endl;
 
     } catch (const std::exception& ex) {
         std::cout << ex.what() << std::endl;

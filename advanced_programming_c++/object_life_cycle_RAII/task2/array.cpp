@@ -5,6 +5,7 @@ Array::Array(int size) {
 
     ptr_ = new int[size];
     size_ = size;
+    ptr_index_ = 0;
 
 }
 
@@ -14,23 +15,23 @@ Array::~Array() {
 
 }
 
-Array* Array::operator=(const Array& arr) {
-        ptr_ = std::move(arr.ptr_);
-        delete[] arr.ptr_;
-        return this;
+Array& Array::operator=(const Array& arr) {
+
+    for (int i{}; i <= arr.size_; i++) {
+        ptr_[ptr_index_+i] = arr.ptr_[i];
+    }
+
+    return *this;
    }
 
 void Array::AddElement(int element) {
 
-    static int ptr = 1;
-
-    if (ptr > size_) {
+    if (ptr_index_ > size_-1) {
         throw std::runtime_error("Out of Range");
     }
 
-    ptr_[ptr - 1] = element;
-    ptr++;
-
+    ptr_[ptr_index_] = element;
+    ptr_index_++;
 }
 
 int Array::GetElement(int index) {
@@ -41,4 +42,12 @@ int Array::GetElement(int index) {
 
     return ptr_[index - 1];
 
+}
+
+int Array::GetPtrIndex() {
+    return ptr_index_;
+}
+
+int Array::GetSize() {
+    return size_;
 }

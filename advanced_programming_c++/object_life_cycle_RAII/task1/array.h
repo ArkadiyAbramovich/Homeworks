@@ -8,12 +8,14 @@ class Array {
 
     int size_;
 
+    int ptr_index_;
+
     public:
     Array(int size);
 
    ~Array();
 
-    void AddElement(const int& element);
+    void AddElement(int element);
 
     int GetElement(int index);
 
