@@ -18,15 +18,9 @@ class Array {
 
     Array& operator=(const Array& arr);
 
-    public:
-    Array(int size);
-
-    ~Array();
-
-    Array& operator=(const Array& arr);
-
     void AddElement(int element);
 
     int GetElement(int index);
+
 
 };
