@@ -22,6 +22,7 @@ Array& Array::operator=(const Array& arr) {
     }
 
     return *this;
+
    }
 
 void Array::AddElement(int element) {
@@ -32,6 +33,7 @@ void Array::AddElement(int element) {
 
     ptr_[ptr_index_] = element;
     ptr_index_++;
+
 }
 
 int Array::GetElement(int index) {
@@ -42,12 +44,9 @@ int Array::GetElement(int index) {
 
     return ptr_[index - 1];
 
+
 }
 
-int Array::GetPtrIndex() {
-    return ptr_index_;
-}
 
-int Array::GetSize() {
-    return size_;
-}
+
+
