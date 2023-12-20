@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    
+
     try {
 
         Array arr(5);
