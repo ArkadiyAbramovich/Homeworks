@@ -9,6 +9,8 @@ int main() {
         arr.AddElement(5);
         arr.AddElement(1);
         arr.AddElement(4);
+        arr.AddElement(7);
+        arr.AddElement(9);
  
         Array new_arr(2);
         new_arr.AddElement(44);
