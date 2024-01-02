@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.27)
+project(ListNode)
+add_subdirectory(Catch2 Catch2-build)
+add_executable(ListNode test_main.cpp list_node.cpp)
+target_link_libraries(ListNode PRIVATE Catch2)
