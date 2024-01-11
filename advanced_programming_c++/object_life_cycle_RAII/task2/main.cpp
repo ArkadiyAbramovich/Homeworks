@@ -12,13 +12,13 @@ int main() {
         arr.AddElement(7);
         arr.AddElement(9);
  
-        Array new_arr(2);
+        Array new_arr(6);
         new_arr.AddElement(44);
         new_arr.AddElement(54);
 
         arr = new_arr;
 
-        std::cout << arr.GetElement(5) << std::endl;
+        std::cout << arr.GetElement(2) << std::endl;
         
     } catch (const std::exception& ex) {
         std::cout << ex.what() << std::endl;

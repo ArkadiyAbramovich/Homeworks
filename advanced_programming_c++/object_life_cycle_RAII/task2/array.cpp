@@ -15,26 +15,17 @@ Array::~Array() {
 
 }
 
-Array& Array::operator=(const Array& arr) {
-
+void Array::operator=(const Array& arr) {
 
     delete[] ptr_;
 
-    size_ += arr.size_;
+    size_ = arr.size_;
     int ptr_index = arr.ptr_index_;
-    int* ptr = new int[ptr_index_ + ptr_index];
+    ptr_ = new int[size_];
     
-    for (int i{}; i < ptr_index_; i++) {
-        ptr[i] = ptr_[i];
-    }
-
     for (int i{}; i < ptr_index; i++) {
-        ptr[ptr_index_+i] = arr.ptr_[i];
+        ptr_[i] = arr.ptr_[i];
     }
-
-    ptr_ = ptr;
-
-    return *this;
 
    }
 

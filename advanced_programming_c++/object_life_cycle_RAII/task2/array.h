@@ -16,7 +16,7 @@ class Array {
 
     ~Array();
 
-    Array& operator=(const Array& arr);
+    void operator=(const Array& arr);
 
     void AddElement(int element);
 
