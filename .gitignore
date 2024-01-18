@@ -1,3 +1,4 @@
 *.vscode
 /tests_c++
 /Catch2
+/tests_python

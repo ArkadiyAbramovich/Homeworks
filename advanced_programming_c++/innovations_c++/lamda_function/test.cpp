@@ -44,27 +44,27 @@ int main() {
 
    age = "08.04.1996 ";
 
-//    auto age_string = std::get<std::string>(age);
-//    std::cout << age_string;
+   auto age_string = std::get<std::string>(age);
+   std::cout << age_string;
 
-//    bool is_string = std::holds_alternative<std::string>(age);
+   bool is_string = std::holds_alternative<std::string>(age);
    
-//    auto try_string = std::get_if<std::string>(&age);
+   auto try_string = std::get_if<std::string>(&age);
 
-//    std::cout << is_string << "\n" << try_string << std::endl;
+   std::cout << is_string << "\n" << try_string << std::endl;
 
-    double v = MySqrt(-5).value_or(0);
-    double v1 = MySqrt(9).value_or(0);
+    // double v = MySqrt(-5).value_or(0);
+    // double v1 = MySqrt(9).value_or(0);
 
-    std::cout << v << "\n" << v1 << std::endl;
+    // std::cout << v << "\n" << v1 << std::endl;
 
-    std::any a = 5;
+    // std::any a = 5;
 
-    std::cout << a.type().name() << " : " << std::any_cast<int>(a) << "\n";
+    // std::cout << a.type().name() << " : " << std::any_cast<int>(a) << "\n";
 
-    bool has_value = a.has_value();
+    // bool has_value = a.has_value();
 
-    std::cout << has_value; 
+    // std::cout << has_value; 
 
 
     
