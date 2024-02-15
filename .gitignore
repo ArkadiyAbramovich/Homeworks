@@ -1,3 +1,2 @@
 *.vscode
-/tests_c++
-/tests_python
+/c++_tests
