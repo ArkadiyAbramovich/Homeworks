@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 project(libpqxx)
-add_executable(libpqxx main.cxx database.cxx)
+add_executable(libpqxx main.cxx client_manager.cxx)
 add_subdirectory(libpqxx-7.8.1 libpqxx-build)
 target_compile_features(libpqxx PRIVATE cxx_std_17)
 target_link_libraries(libpqxx PRIVATE pqxx)
