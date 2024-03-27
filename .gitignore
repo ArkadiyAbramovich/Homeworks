@@ -1,3 +1,4 @@
 *.vscode
 /tests_c++
 /tests_python
+/build
