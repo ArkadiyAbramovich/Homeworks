@@ -4,7 +4,7 @@
 
 int main() {
 
-    std::vector<int> vec{34, 56, 12, 78, 12, 99, 23, 94};
+    std::vector<int> vec{34, 56, 12, 78, 12, 99, 23, 94, 33, 12, 90};
 
     for_each_parl(vec.begin(), vec.end(), [](int x){std::cout << x << " ";});
 }

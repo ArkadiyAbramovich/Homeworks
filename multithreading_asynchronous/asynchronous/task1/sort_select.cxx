@@ -1,6 +1,6 @@
 #include "sort_select.hxx"
 
-int FindMin(std::array<int, 5>& arr) {
+void FindMin(std::array<int, 5>& arr, std::promise<int> prom) {
 
     int i = 0;
     int min_indx = i;
@@ -8,21 +8,19 @@ int FindMin(std::array<int, 5>& arr) {
             if (arr[min_indx] > arr[j]) {
                 min_indx = j;
             }
-            return min_indx;
+            i++;
         }
-        i++;
+        prom.set_value(min_indx);
 }
 
-void SortSelect(std::array<int, 5>& arr, std::promise<std::array<int, 5>> prom) {
+void SortSelect(std::array<int, 5>& arr) {
 
-    std::packaged_task<int(std::array<int, 5>)> pt(FindMin);
-    std::shared_future<int> ft_res = pt.get_future();
-    auto ft = std::async(std::move(pt), arr);
     for (int i{0}; i < arr.size() - 1; i++) {
+
+        std::promise<int> prom;
+        std::future<int> ft_res = prom.get_future();
+        std::future<int> ft = std::async(FindMin, arr, std::move(prom));
+    
         std::swap(arr[i], arr[ft_res.get()]);
-        std::this_thread::sleep_for(std::chrono::milliseconds(20));
     }
-    prom.set_value(arr);
 }
-
-

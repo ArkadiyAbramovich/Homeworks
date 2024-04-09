@@ -6,12 +6,8 @@
 int main() {
 
     std::array<int, 5> arr{5, 3, 6, 2, 1};
-
-    std::promise<std::array<int, 5>> prom;
-    std::future<std::array<int, 5>> ft_res = prom.get_future();
-    auto ft = std::async(SortSelect, arr, std::move(prom));
-
-    auto arr_ =  ft_res.get();
+    
+    SortSelect(arr);
 
     for (const auto& el : arr) {
         std::cout << el << " ";
