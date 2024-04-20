@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(shape_test)
+project(refactor)
 
-add_subdirectory(googletest-1.14.0)
+add_library(lib STATIC shape.hxx line.hxx line.cxx square.hxx square.cxx cube.hxx cube.cxx circle.hxx circle.cxx cylinder.hxx cylinder.cxx)
 
-add_executable(shape_test shape_test.cxx)
+add_executable(refactor main.cxx)
 
-target_link_libraries(shape_test GTest::gtest_main)
+target_link_libraries(refactor lib)
