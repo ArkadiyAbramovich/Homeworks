@@ -14,6 +14,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
+#find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Timer)
+#find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Timer)
+
+#target_link_libraries(widgets PRIVATE Qt${QT_VERSION_MAJOR}::Timer)
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
