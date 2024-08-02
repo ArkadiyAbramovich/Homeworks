@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,8 +19,10 @@ public:
 private Q_SLOTS:
     void pushButtonClicked(bool checked = false);
 
+
 private:
     Ui::MainWindow *ui;
     int count = 1;
+    QTimer* timer;
 };
 #endif // MAINWINDOW_H

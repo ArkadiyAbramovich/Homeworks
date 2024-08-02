@@ -19,7 +19,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->groupBox->setTitle("Your answer is:");
     ui->radioButton_2->setText("Item 1");
     ui->radioButton->setText("Item 2");
-    ui->pushButton->toggle();
     ui->pushButton->setText("Click Me!");
     ui->progressBar->setMinimum(0);
     ui->progressBar->setMaximum(10);
@@ -33,13 +32,17 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::pushButtonClicked(bool checked) {
-  if(ui->progressBar->value() >= 10) {
-      ui->progressBar->setValue(0);
-      count = 1;
-  } else {
-      ui->progressBar->setValue(count);
-      count += 1;
-  }
+
+  if(ui->pushButton->isChecked()) {
+
+    if(ui->progressBar->value() >= 10) {
+         ui->progressBar->setValue(0);
+        count = 1;
+    } else {
+       ui->progressBar->setValue(count);
+          count += 1;
+    }
+    }
 }
 
 

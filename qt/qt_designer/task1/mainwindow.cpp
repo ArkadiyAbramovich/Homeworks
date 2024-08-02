@@ -15,8 +15,7 @@ MainWindow::~MainWindow()
     delete  dialogWindow;
 }
 
-
-void MainWindow::on_pushButton_3_clicked(){
-        dialogWindow->show();
+void MainWindow::on_pushButton_clicked() {
+    dialogWindow->show();
 }
 
