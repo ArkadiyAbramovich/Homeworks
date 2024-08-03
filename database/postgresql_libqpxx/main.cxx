@@ -7,7 +7,7 @@ int main() {
 
     std::string connection_str = "host=127.0.0.1 "
                                     "port=5432 "
-                                    "dbname=newdb "
+                                    "dbname=postgres "
                                     "user=new_user "
                                     "password=new_user";
 
